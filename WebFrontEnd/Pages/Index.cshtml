@@ -1,0 +1,23 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+
+@if (@Model.WeatherForecasts != null)
+{    
+    <ul>
+        @foreach (var item in @Model.WeatherForecasts)
+        {
+            <li>@item.Date - @item.TemperatureC - @item.Summary</li>
+        }
+    </ul>    
+}
+else
+{
+      <div class="alert alert-danger" role="alert">@Model.ErrorMessage</div>
+}
