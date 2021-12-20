@@ -1,4 +1,5 @@
 # Demo af Docker og Docker Compose vha. Visual Studio 2022
+Ref: [Tutorial: Create a multi-container app with Docker Compose](https://docs.microsoft.com/en-us/visualstudio/containers/tutorial-multicontainer?view=vs-2022)
 
 Der benyttes følgende Visual Studio templates:
 
