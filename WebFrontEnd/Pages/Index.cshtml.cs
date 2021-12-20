@@ -17,8 +17,8 @@ namespace WebFrontEnd.Pages
 
         public async Task OnGet()
         {
-            //using HttpClient client = new() { BaseAddress = new Uri("http://mywebapi/WeatherForecast") };   // Docker
-            using HttpClient client = new() { BaseAddress = new Uri("http://localhost:27776") };            // Non-Docker
+            //using HttpClient client = new() { BaseAddress = new Uri("http://localhost:27776") };      // Non-Docker
+            using HttpClient client = new() { BaseAddress = new Uri("http://192.168.1.23:49153") };   // Docker       
 
             try
             {
