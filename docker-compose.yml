@@ -1,11 +1,15 @@
 version: '3.4'
 
 services:
-  webfrontend:
-    image: ${DOCKER_REGISTRY-}webfrontend
-    build:
-      context: .
-      dockerfile: WebFrontEnd/Dockerfile
+  mssqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: mssqlserver
+    environment:
+      - SA_PASSWORD=P@ssw0rd
+      - ACCEPT_EULA=Y
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
 
   mywebapi:
     image: ${DOCKER_REGISTRY-}mywebapi
@@ -13,3 +17,8 @@ services:
       context: .
       dockerfile: MyWebApi/Dockerfile
 
+  webfrontend:
+    image: ${DOCKER_REGISTRY-}webfrontend
+    build:
+      context: .
+      dockerfile: WebFrontEnd/Dockerfile

@@ -17,12 +17,12 @@ namespace WebFrontEnd.Pages
 
         public async Task OnGet()
         {
-            //using HttpClient client = new() { BaseAddress = new Uri("http://mywebapi/WeatherForecast") };   // Docker
-            using HttpClient client = new() { BaseAddress = new Uri("http://localhost:27776") };            // Non-Docker
+            using HttpClient client = new() { BaseAddress = new Uri("http://mywebapi") };   // Docker
+            //using HttpClient client = new() { BaseAddress = new Uri("http://localhost:27776") };            // Non-Docker
 
             try
             {
-                WeatherForecasts = await client.GetFromJsonAsync<List<WeatherForecast>>("WeatherForecast");
+                WeatherForecasts = await client.GetFromJsonAsync<List<WeatherForecast>>("WeatherForecasts");
             }
             catch (Exception ex)
             {
